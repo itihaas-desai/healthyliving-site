@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>HealthyLiving — Wellness for everyday</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --accent-1:#2e8b57; /* sea green */
+    --accent-2:#f39c12; /* warm yellow */
+    --accent-3:#e74c3c; /* coral */
+    --muted:#6b7280;
+    --bg:#ffffff;
+    --card:#fbfbfb;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    background:var(--bg); color:#111;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:40;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom:1px solid #f0f0f0;
+  }
+  .container{max-width:1100px; margin:0 auto; padding:20px;}
+  .nav{display:flex; align-items:center; gap:18px; justify-content:space-between;}
+  .brand{display:flex;align-items:center; gap:12px;}
+  .logo {
+    width:44px;height:44px;border-radius:10px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--accent-1),var(--accent-2));
+    color:white;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(46,139,87,0.12);
+  }
+  .sitename{
+    font-weight:700;font-size:18px;
+    color:var(--accent-1);
+  }
+  nav ul{display:flex; gap:12px; list-style:none; margin:0; padding:0;}
+  nav a{padding:8px 12px; border-radius:8px; text-decoration:none; color:var(--muted); font-weight:600;}
+  nav a:hover{background:#f3f7f6; color:#0f1720}
+
+  /* Hero */
+  .hero{display:flex; align-items:center; gap:28px; padding:36px 0;}
+  .hero-left{flex:1}
+  .hero-right{width:300px}
+  .hero h1{font-size:34px; margin:0 0 8px; color: #073b2e}
+  .hero p{color:var(--muted); margin:0 0 18px}
+  .cta {display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:10px; background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:white; font-weight:700; text-decoration:none}
+
+  /* categories */
+  .cats{display:flex; gap:12px; margin-top:18px;}
+  .cat{
+    flex:1; background:var(--card); border-radius:12px; padding:14px; display:flex; gap:12px; align-items:center; cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .cat:hover{transform:translateY(-6px); box-shadow:0 12px 30px rgba(16,24,40,0.06)}
+  .icon-wrap{width:48px;height:48px;border-radius:10px; display:grid; place-items:center; font-weight:700; color:white}
+  .cat h4{margin:0;font-size:16px}
+  .cat p{margin:0;color:var(--muted); font-size:13px}
+
+  /* sections */
+  section{padding:28px 0; border-top:1px solid #f5f5f5}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px}
+  .card{background:white;border-radius:12px;padding:18px; box-shadow:0 6px 18px rgba(15,23,42,0.04); border:1px solid #f4f4f4}
+  .small{font-size:13px; color:var(--muted)}
+  .post-title{font-weight:700; margin:8px 0 6px}
+  .btn{display:inline-block;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700;background:#f3f7f6;color:#0f1720}
+
+  /* back to top */
+  #backTop{
+    position:fixed; right:20px; bottom:22px; z-index:80;
+    width:48px;height:48px;border-radius:14px; display:grid; place-items:center; cursor:pointer;
+    box-shadow:0 10px 28px rgba(15,23,42,0.12); background:linear-gradient(135deg,var(--accent-2),var(--accent-3)); color:white;
+    border:0; outline:0;
+  }
+
+  footer{padding:36px 0; border-top:1px solid #f5f5f5; color:var(--muted)}
+  .flex{display:flex; gap:12px; align-items:center}
+
+  @media (max-width:760px){
+    .hero{flex-direction:column}
+    .hero-right{width:100%}
+    nav ul{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">HL</div>
+      <div>
+        <div class="sitename">HealthyLiving</div>
+        <div class="small">Wellness for everyday</div>
+      </div>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#nutrition">Nutrition</a></li>
+        <li><a href="#fitness">Fitness</a></li>
+        <li><a href="#mindfulness">Mindfulness</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container" id="home">
+  <div class="hero">
+    <div class="hero-left">
+      <h1>Small habits. Big wellness.</h1>
+      <p>Short, practical guides for nutrition, fitness and mindful living — bite-sized for busy people.</p>
+      <a class="cta" href="#nutrition">Explore Nutrition</a>
+
+      <div class="cats" style="margin-top:18px">
+        <div class="cat" onclick="scrollToId('nutrition')">
+          <div class="icon-wrap" style="background:linear-gradient(135deg,#7bd389,#2e8b57)">🍎</div>
+          <div>
+            <h4>Nutrition</h4><p>Recipes, meal plans & tips</p>
+          </div>
+        </div>
+
+        <div class="cat" onclick="scrollToId('fitness')">
+          <div class="icon-wrap" style="background:linear-gradient(135deg,#f6b26b,#f39c12)">🏃</div>
+          <div>
+            <h4>Fitness</h4><p>Workouts & progress plans</p>
+          </div>
+        </div>
+
+        <div class="cat" onclick="scrollToId('mindfulness')">
+          <div class="icon-wrap" style="background:linear-gradient(135deg,#8ecae6,#219ebc)">🧘</div>
+          <div>
+            <h4>Mindfulness</h4><p>Meditation & stress relief</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="card">
+        <div class="small">Featured</div>
+        <div class="post-title">3 Quick Morning Routines for a Calm Day</div>
+        <p class="small">Wake up gently with simple steps to set your day right — no equipment needed.</p>
+        <div style="margin-top:12px"><a class="btn" href="#blog">Read</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nutrition -->
+  <section id="nutrition" aria-labelledby="nutritionHeading">
+    <h2 id="nutritionHeading">Nutrition</h2>
+    <p class="small">Simple recipes and balanced meal ideas.</p>
+    <div class="grid" style="margin-top:14px">
+      <article class="card">
+        <div class="small">Recipe</div>
+        <div class="post-title">Overnight Oats — Berry Boost</div>
+        <p class="small">Prep 5 mins. High fibre & portable.</p>
+      </article>
+
+      <article class="card">
+        <div class="small">Guide</div>
+        <div class="post-title">Plate Balance for Busy Days</div>
+        <p class="small">How to build a satisfying plate without overthinking.</p>
+      </article>
+
+      <article class="card">
+        <div class="small">Tip</div>
+        <div class="post-title">Hydration Hacks</div>
+        <p class="small">Small changes to drink more water through your day.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Fitness -->
+  <section id="fitness" aria-labelledby="fitnessHeading">
+    <h2 id="fitnessHeading">Fitness</h2>
+    <p class="small">Short workouts and mobility routines.</p>
+    <div class="grid" style="margin-top:14px">
+      <div class="card"><div class="small">Plan</div><div class="post-title">12-min Full Body</div><p class="small">No equipment, do anywhere.</p></div>
+      <div class="card"><div class="small">How-to</div><div class="post-title">Desk Stretches</div><p class="small">Quick tension relief at work.</p></div>
+      <div class="card"><div class="small">Program</div><div class="post-title">Beginner Strength</div><p class="small">3 sessions / week plan.</p></div>
+    </div>
+  </section>
+
+  <!-- Mindfulness -->
+  <section id="mindfulness" aria-labelledby="mindHeading">
+    <h2 id="mindHeading">Mindfulness</h2>
+    <p class="small">Guided practices to reduce stress and improve focus.</p>
+    <div class="grid" style="margin-top:14px">
+      <div class="card"><div class="small">Practice</div><div class="post-title">5-min Breath Anchor</div><p class="small">Calm your mind quickly.</p></div>
+      <div class="card"><div class="small">Article</div><div class="post-title">Sleep Preparation Ritual</div><p class="small">Wind down for better sleep.</p></div>
+      <div class="card"><div class="small">Tip</div><div class="post-title">Micro Mindful Moments</div><p class="small">Turn routine into presence.</p></div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" aria-labelledby="blogHeading">
+    <h2 id="blogHeading">Blog</h2>
+    <p class="small">Recent posts</p>
+    <div class="grid" style="margin-top:14px">
+      <article class="card"><div class="small">Wellness</div><div class="post-title">Why Routine Works</div><p class="small">Small steps compound.</p></article>
+      <article class="card"><div class="small">Recipe</div><div class="post-title">Green Smoothie 3 Ways</div><p class="small">Healthy + tasty.</p></article>
+      <article class="card"><div class="small">Fitness</div><div class="post-title">Walk Your Way to Fitness</div><p class="small">Simple steps to build habit.</p></article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-labelledby="contactHeading">
+    <h2 id="contactHeading">Contact</h2>
+    <p class="small">This contact form is a demo — submission is non-functional for the demo site.</p>
+    <div style="max-width:720px;">
+      <form onsubmit="event.preventDefault(); alert('Demo contact — no submission');" style="display:grid; gap:10px;">
+        <input placeholder="Your name" style="padding:12px; border-radius:8px; border:1px solid #eee" />
+        <input placeholder="Email" style="padding:12px; border-radius:8px; border:1px solid #eee" />
+        <textarea placeholder="Message" style="padding:12px; border-radius:8px; border:1px solid #eee" rows="5"></textarea>
+        <button class="btn" type="submit">Send (Demo)</button>
+      </form>
+    </div>
+  </section>
+
+  <footer style="margin-top:26px">
+    <div class="flex" style="justify-content:space-between;">
+      <div>
+        <div style="font-weight:700;color:var(--accent-1)">HealthyLiving</div>
+        <div class="small">Non-commercial demo site</div>
+      </div>
+      <div class="small">© HealthyLiving — Demo</div>
+    </div>
+  </footer>
+</main>
+
+<button id="backTop" title="Back to top" onclick="scrollToTop()">↑</button>
+
+<script>
+  function scrollToId(id){
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  function scrollToTop(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  // Add keyboard shortcut: "T" to top (demo nicety)
+  document.addEventListener('keydown', function(e){
+    if(e.key.toLowerCase() === 't') scrollToTop();
+  });
+</script>
+</body>
+</html>
